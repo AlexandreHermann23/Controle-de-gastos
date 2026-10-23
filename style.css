@@ -1,0 +1,237 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  transition: background-color 0.3s;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header-container h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#btn-tema {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.resumo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #eef2f5;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  flex: 1;
+  text-align: center;
+  margin: 0 4px;
+}
+
+/* Gráfico */
+.grafico-container {
+  height: 180px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-linha {
+  display: flex;
+  gap: 10px;
+}
+
+.form-linha select {
+  flex: 1;
+}
+
+input, select, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-cancelar {
+  background-color: #e67e22;
+}
+
+.filtros {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.filtros button {
+  background-color: #7f8c8d;
+  flex: 1;
+  font-size: 0.8rem;
+  padding: 8px 5px;
+}
+
+#btn-ordenar {
+  background-color: #2980b9;
+}
+
+/* Filtros por Ano, Mês e Categoria */
+.filtros-avancados {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.campo-filtro {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 0.8rem;
+}
+
+.campo-filtro label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.campo-filtro select {
+  padding: 6px;
+  font-size: 0.8rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+li.receita { border-left: 5px solid #2ecc71; }
+li.despesa { border-left: 5px solid #e74c3c; }
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icone-categoria {
+  font-size: 1.2rem;
+  color: #34495e;
+  width: 24px;
+  text-align: center;
+}
+
+.item-info small {
+  display: block;
+  color: #7f8c8d;
+  font-size: 0.75rem;
+}
+
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-editar {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.btn-deletar {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+/* ESTILOS MODO NOTURNO */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .container {
+  background-color: #16213e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode #btn-tema {
+  color: #f1c40f;
+}
+
+body.dark-mode .card {
+  background-color: #0f3460;
+  color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #0f3460;
+  color: #ffffff;
+  border: 1px solid #1f4068;
+}
+
+body.dark-mode li {
+  border-bottom-color: #1f4068;
+}
+
+body.dark-mode .icone-categoria {
+  color: #bdc3c7;
+}
+
+body.dark-mode .item-info small {
+  color: #bdc3c7;
+}

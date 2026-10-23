@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício Prático JS - Dashboard</title>
+  <!-- FontAwesome (Ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <div class="header-container">
+      <h1>Gerenciador de Lançamentos</h1>
+      <button id="btn-tema" title="Alternar Modo Noturno">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+
+    <!-- Painel de Resumo -->
+    <section class="resumo">
+      <div class="card">
+        <h2>Total de Itens: <span id="total-itens">0</span></h2>
+      </div>
+      <div class="card">
+        <h2>Valor Total: R$ <span id="valor-total">0.00</span></h2>
+      </div>
+    </section>
+
+    <!-- Canvas do Gráfico -->
+    <section class="grafico-container">
+      <canvas id="grafico-saldo"></canvas>
+    </section>
+
+    <!-- Formulário de Cadastro / Edição -->
+    <form id="form-lancamento">
+      <input type="text" id="descricao" placeholder="Descrição (ex: Mercado, Salário)" required>
+      <input type="number" id="valor" step="0.01" min="0.01" placeholder="Valor R$" required>
+      
+      <div class="form-linha">
+        <select id="tipo" required>
+          <option value="receita">Receita (+)</option>
+          <option value="despesa">Despesa (-)</option>
+        </select>
+
+        <select id="categoria" required>
+          <option value="alimentacao">Alimentação</option>
+          <option value="transporte">Transporte</option>
+          <option value="moradia">Moradia</option>
+          <option value="salario">Salário</option>
+          <option value="lazer">Lazer</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+
+      <input type="date" id="data" required>
+
+      <button type="submit" id="btn-submit">Adicionar</button>
+      <button type="button" id="btn-cancelar" style="display: none;">Cancelar Edição</button>
+    </form>
+
+    <!-- Filtros por Tipo e Ordenação -->
+    <div class="filtros">
+      <button data-filtro="todos">Todos</button>
+      <button data-filtro="receita">Receitas</button>
+      <button data-filtro="despesa">Despesas</button>
+      <button id="btn-ordenar">Maior Valor</button>
+    </div>
+
+    <!-- Filtros Avançados: Ano, Mês e Categoria -->
+    <div class="filtros-avancados">
+      <div class="campo-filtro">
+        <label for="filtro-ano">Ano:</label>
+        <select id="filtro-ano">
+          <option value="todos">Todos os Anos</option>
+        </select>
+      </div>
+
+      <div class="campo-filtro">
+        <label for="filtro-mes">Mês:</label>
+        <select id="filtro-mes">
+          <option value="todos">Todos os Meses</option>
+          <option value="01">Janeiro</option>
+          <option value="02">Fevereiro</option>
+          <option value="03">Março</option>
+          <option value="04">Abril</option>
+          <option value="05">Maio</option>
+          <option value="06">Junho</option>
+          <option value="07">Julho</option>
+          <option value="08">Agosto</option>
+          <option value="09">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+      </div>
+
+      <div class="campo-filtro">
+        <label for="filtro-categoria">Categoria:</label>
+        <select id="filtro-categoria">
+          <option value="todas">Todas</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="transporte">Transporte</option>
+          <option value="moradia">Moradia</option>
+          <option value="salario">Salário</option>
+          <option value="lazer">Lazer</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Lista de Lançamentos -->
+    <ul id="lista-lancamentos"></ul>
+  </main>
+
+  <!-- Chart.js (Gráficos) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
